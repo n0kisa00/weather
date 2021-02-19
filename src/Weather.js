@@ -1,9 +1,9 @@
 import './App.css';
 import React,{useState,useEffect} from "react";
 
-const API_URL = "https://api.openweathermap.org/data/2.5/weather?";
+const API_URL = "http://api.openweathermap.org/data/2.5/weather?";
 const ICON_URL = "https://openweathermap.org/img/wn/";
-const API_KEY = "";
+const API_KEY = "51300cbe689d9b13bb4252863e38a0e6";
 
 export default function Weather({lat,lng}) {
   const [temp, setTemp] = useState(0);
@@ -15,9 +15,9 @@ export default function Weather({lat,lng}) {
   useEffect(() => {
     const url = API_URL +
     "lat=" + lat +
-    "&lon?" + lng +
+    "&lon=" + lng +
     "&units=metric" +
-    "&appid=" + API_KEY
+    "&appid=" + API_KEY;
   
     fetch(url)
     .then(res => res.json())
